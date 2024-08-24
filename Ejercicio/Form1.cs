@@ -1,3 +1,4 @@
+using Ejercicio.Ejercicios;
 namespace Ejercicio
 {
     public partial class Form1 : Form
@@ -5,6 +6,18 @@ namespace Ejercicio
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            EjercicioUno ejercicioUno = new EjercicioUno();
+            ejercicioUno.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EjercicioDos ejercicioDos = new EjercicioDos();
+            ejercicioDos.Show();
         }
     }
 }
