@@ -1,4 +1,5 @@
 using Ejercicio.Ejercicios;
+using Ejercicio.Database;
 namespace Ejercicio
 {
     public partial class Form1 : Form
@@ -6,6 +7,7 @@ namespace Ejercicio
         public Form1()
         {
             InitializeComponent();
+            CDatabase.getConexion();
         }
 
         private void btn1_Click(object sender, EventArgs e)
