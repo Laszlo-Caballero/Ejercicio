@@ -34,6 +34,8 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
+            button1 = new Button();
+            btnEjercicio8 = new Button();
             SuspendLayout();
             // 
             // btn1
@@ -93,11 +95,32 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(233, 222);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 6;
+            button1.Text = "Ejercicio 7";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // btnEjercicio8
+            // 
+            btnEjercicio8.Location = new Point(399, 222);
+            btnEjercicio8.Name = "btnEjercicio8";
+            btnEjercicio8.Size = new Size(94, 29);
+            btnEjercicio8.TabIndex = 7;
+            btnEjercicio8.Text = "Ejercicio 8";
+            btnEjercicio8.UseVisualStyleBackColor = true;
+            btnEjercicio8.Click += btnEjercicio8_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(719, 288);
+            ClientSize = new Size(719, 342);
+            Controls.Add(btnEjercicio8);
+            Controls.Add(button1);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -117,5 +140,7 @@
         private Button button4;
         private Button button5;
         private Button button6;
+        private Button button1;
+        private Button btnEjercicio8;
     }
 }

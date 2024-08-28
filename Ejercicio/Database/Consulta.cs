@@ -12,7 +12,7 @@ namespace Ejercicio.Database
     internal class Consultas
     {
         private SqlConnection conexion = CDatabase.getConexion();
-        public void Consultar(string query, DataGridView tabla, String[] parametros, String[] Datosparametros)
+        public void execQueryIntoTabla(string query, DataGridView tabla, String[] parametros, String[] Datosparametros)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace Ejercicio.Database
             }
         }
 
-        public bool execQuery(string query, string[] parametros, string[] datos)
+        public SqlDataReader execQuery(string query, string[] parametros, string[] datos)
         {
             try
             {
@@ -74,14 +74,14 @@ namespace Ejercicio.Database
                     command = new SqlCommand(query, conexion);
                 }
 
-                command.ExecuteNonQuery();
+                SqlDataReader reader = command.ExecuteReader();
 
-                return true;
+                return reader;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                return false;
+                return null;
             }
         }
     }
