@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Ejercicio.Database
 {
@@ -33,7 +34,6 @@ namespace Ejercicio.Database
                 DataTable datable = new DataTable();
                 adapter.Fill(datable);
                 tabla.DataSource = datable;
-                conexion.Close();
             }
             catch (Exception ex)
             {
@@ -53,6 +53,35 @@ namespace Ejercicio.Database
             {
                 MessageBox.Show(ex.ToString());
                 return null;
+            }
+        }
+
+        public bool execQuery(string query, string[] parametros, string[] datos)
+        {
+            try
+            {
+                SqlCommand command;
+                if (parametros.Length > 0 && datos.Length > 0)
+                {
+                    command = new SqlCommand(query, conexion);
+                    for (int i = 0; i < parametros.Length; i++)
+                    {
+                        command.Parameters.AddWithValue(parametros[i], datos[i]);
+                    }
+                }
+                else
+                {
+                    command = new SqlCommand(query, conexion);
+                }
+
+                command.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
             }
         }
     }

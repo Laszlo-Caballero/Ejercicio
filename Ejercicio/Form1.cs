@@ -7,7 +7,6 @@ namespace Ejercicio
         public Form1()
         {
             InitializeComponent();
-            CDatabase.getConexion();
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -20,6 +19,12 @@ namespace Ejercicio
         {
             EjercicioDos ejercicioDos = new EjercicioDos();
             ejercicioDos.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            EjercicioSeis ejercicioSeis = new EjercicioSeis();
+            ejercicioSeis.Show();   
         }
     }
 }
