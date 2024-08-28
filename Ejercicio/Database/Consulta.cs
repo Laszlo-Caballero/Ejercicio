@@ -41,21 +41,6 @@ namespace Ejercicio.Database
             }
         }
 
-        public SqlDataReader Datos(string query)
-        {
-            SqlCommand command = new SqlCommand(query, conexion);
-            try
-            {
-                SqlDataReader reader = command.ExecuteReader();
-                return reader;
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return null;
-            }
-        }
-
         public SqlDataReader execQuery(string query, string[] parametros, string[] datos)
         {
             try

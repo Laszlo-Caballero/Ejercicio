@@ -15,7 +15,7 @@ namespace Ejercicio.Ejercicios
         private static Consultas consultas = new Consultas();
         public static string CodigoProducto()
         {
-            SqlDataReader reader = consultas.Datos("select top 1 COD_PRO from TB_PRODUCTO order by COD_PRO desc");
+            SqlDataReader reader = consultas.execQuery("select top 1 COD_PRO from TB_PRODUCTO order by COD_PRO desc", [], []);
 
             if (reader.Read())
             {
