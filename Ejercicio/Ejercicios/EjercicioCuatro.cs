@@ -15,6 +15,18 @@ namespace Ejercicio.Ejercicios
         public EjercicioCuatro()
         {
             InitializeComponent();
+            MetodosCuatro.VerDatos(datosTabla);
+
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            MetodosCuatro.Mostrar(rbtProducto, rbtCliente, rbtMes, datosTabla);
+        }
+
+        private void btnBusqueda_Click(object sender, EventArgs e)
+        {
+            MetodosCuatro.Buscar(rdBProducto, rdBCliente, rdBMes, txtBuscar, datosTabla);
         }
     }
 }
