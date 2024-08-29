@@ -10,37 +10,38 @@ namespace Ejercicio.Ejercicios
 
         public static void CargarDatos(TreeView treeView)
         {
-            // Limpia el TreeView antes de cargar nuevos datos
             treeView.Nodes.Clear();
 
-            // Cargar Clientes
-            using (SqlDataReader clienteReader = consultas.execQuery("SELECT * FROM TB_CLIENTE", new string[] { }, new string[] { }))
-            {
-                while (clienteReader.Read())
-                {
-                    // Crear nodo para cada cliente
-                    TreeNode clienteNode = new TreeNode(clienteReader["CONTACTO"].ToString());
-                    string clienteId = clienteReader["COD_CLI"].ToString();
-
-                    // Cargar Facturas para cada cliente
-                    using (SqlDataReader facturaReader = consultas.execQuery($"SELECT * FROM TB_FACTURA WHERE COD_CLI = @clienteId",
-                                                    new string[] { "@clienteId" }, new string[] { clienteId }))
-                    {
-                        while (facturaReader.Read())
-                        {
-                            // Crear nodo para cada factura
-                            TreeNode facturaNode = new TreeNode($"Factura {facturaReader["NUM_FAC"]}: {facturaReader["FEC_FAC"].ToString()}");
-                            clienteNode.Nodes.Add(facturaNode);
-                        }
-                        facturaReader.Close();
-                    }
-
-                    // Agregar el nodo del cliente al TreeView
-                    treeView.Nodes.Add(clienteNode);
-                }
-                clienteReader.Close();
+            List<string> clientes = new List<string>();
+            List<string> codCli = new List<string>();
+            SqlDataReader clienteReader = consultas.execQuery("SELECT * FROM TB_CLIENTE", [], []);
+            while (clienteReader.Read()) {
+                clientes.Add(clienteReader["CONTACTO"].ToString());
+                codCli.Add(clienteReader["COD_CLI"].ToString());
             }
+            clienteReader.Close();
+
+            for (int i = 0; i < clientes.Count; i++)
+            {
+
+                TreeNode clienteNode = new TreeNode(clientes[i]);
+                SqlDataReader facturaReader = consultas.execQuery($"SELECT * FROM TB_FACTURA WHERE COD_CLI = @clienteId",
+                                                                    new string[] { "@clienteId" }, new string[] { codCli[i] });
+
+                while (facturaReader.Read())
+                {
+                    // Crear nodo para cada factura
+                    TreeNode facturaNode = new TreeNode($"Factura {facturaReader["NUM_FAC"]}: {facturaReader["FEC_FAC"].ToString()}");
+                    clienteNode.Nodes.Add(facturaNode);
+                }
+                facturaReader.Close();
+
+                // Agregar el nodo del cliente al TreeView
+                treeView.Nodes.Add(clienteNode);
+            }
+
         }
+        }
+
     }
-}
 
