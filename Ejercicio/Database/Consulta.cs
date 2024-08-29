@@ -12,7 +12,7 @@ namespace Ejercicio.Database
     internal class Consultas
     {
         private SqlConnection conexion = CDatabase.getConexion();
-        public void execQueryIntoTabla(string query, DataGridView tabla, String[] parametros, String[] Datosparametros)
+        public void execQueryIntoTabla(string query, DataGridView tabla, string[] parametros, string[] Datosparametros)
         {
             try
             {

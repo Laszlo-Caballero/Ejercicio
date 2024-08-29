@@ -1,4 +1,5 @@
 using Ejercicio.Ejercicios;
+using Ejercicio.Ejercicios.Factura;
 using Ejercicio.Database;
 namespace Ejercicio
 {
@@ -29,8 +30,8 @@ namespace Ejercicio
 
         private void btnEjercicio8_Click(object sender, EventArgs e)
         {
-            EjercicioOcho ejercicioOcho = new EjercicioOcho();  
-            ejercicioOcho.Show();
+            EjercicioFac ejercicioFac = new EjercicioFac();
+            ejercicioFac.Show();
         }
     }
 }

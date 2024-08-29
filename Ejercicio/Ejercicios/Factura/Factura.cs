@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ejercicio.Ejercicios
+namespace Ejercicio.Ejercicios.Factura
 {
-    public partial class EjercicioOcho : Form
+    public partial class Factura : Form
     {
-        public EjercicioOcho()
+        private MetodosFac metodos = new MetodosFac();
+        public Factura(string cod)
         {
             InitializeComponent();
+            metodos.Factura(cod, lblNum, dtFecha, lblNombre, lblRazon, lblRuc, lblIgv, tabla, lblTotal);
         }
     }
 }
