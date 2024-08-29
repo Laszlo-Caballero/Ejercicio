@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Ejercicio.Ejercicios
 {
-    public partial class Ejerciciotres : Form
+    public partial class EjercicioCinco : Form
     {
-        public Ejerciciotres()
+        public EjercicioCinco()
         {
             InitializeComponent();
+        }
+
+        private void EjercicioCinco_Load(object sender, EventArgs e)
+        {
+            MetodosTreeView.CargarDatos(treeView);
+        }
+
+        private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
         }
     }
 }
