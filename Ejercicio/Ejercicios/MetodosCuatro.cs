@@ -16,16 +16,22 @@ namespace Ejercicio.Ejercicios
             consultas.execQueryIntoTabla("SELECT * FROM PROD_VENTA ORDER BY [VENTAS TOTALES]  DESC", grid, [], []);
         }
 
-        public static void Buscar(RadioButton rbP, RadioButton rbC, RadioButton rbM, TextBox txtBuscar, DataGridView grid)
+        public static bool Buscar(RadioButton rbP, RadioButton rbC, RadioButton rbM, TextBox txtBuscar, DataGridView grid)
         {
+            if (txtBuscar.Text.Equals(""))
+                return false;
+            if (!rbP.Checked && !rbC.Checked && !rbM.Checked)
+                return false;
+
             String criterio = rbP.Checked ? "Producto" : rbC.Checked ? "Cliente" : rbM.Checked ? "Mes" : "";
             string dato = txtBuscar.Text;
             string[] Datos = { dato, criterio };
-            string[] Parametros = { "@dato", "@criterio" };
+            string[] Parametros = {"@dato", "@criterio" };
 
-
-            consultas.execQueryIntoTabla("EXEC Busqueda @dato, @criterio", grid, Parametros, Datos);
+            consultas.execQueryCommandTabla("EXEC Busqueda @dato, @criterio", Parametros, Datos, grid);
+            return true;
         }
+
 
         public static void Mostrar(RadioButton rbP, RadioButton rbC, RadioButton rbM, DataGridView grid)
         {

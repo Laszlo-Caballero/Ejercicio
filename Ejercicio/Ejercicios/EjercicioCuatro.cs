@@ -26,7 +26,9 @@ namespace Ejercicio.Ejercicios
 
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
-            MetodosCuatro.Buscar(rdBProducto, rdBCliente, rdBMes, txtBuscar, datosTabla);
+            bool result = MetodosCuatro.Buscar(rdBProducto, rdBCliente, rdBMes, txtBuscar, datosTabla);
+            if (!result)
+                MessageBox.Show("Complete los datos necesarios para la busqueda");
         }
     }
 }
