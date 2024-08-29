@@ -14,7 +14,7 @@ namespace Ejercicio.Ejercicios
             treeView.Nodes.Clear();
 
             // Cargar Clientes
-            using (SqlDataReader clienteReader = consultas.execQuery("SELECT * FROM TB_CLIENTE", [], []))
+            using (SqlDataReader clienteReader = consultas.execQuery("SELECT * FROM TB_CLIENTE", new string[] { }, new string[] { }))
             {
                 while (clienteReader.Read())
                 {
@@ -23,8 +23,9 @@ namespace Ejercicio.Ejercicios
                     string clienteId = clienteReader["COD_CLI"].ToString();
 
                     // Cargar Facturas para cada cliente
-                    using (SqlDataReader facturaReader = consultas.execQuery($"SELECT * FROM TB_FACTURA WHERE COD_CLI = '{clienteId}'", [], []))
-                    {clienteReader.Close(); 
+                    using (SqlDataReader facturaReader = consultas.execQuery($"SELECT * FROM TB_FACTURA WHERE COD_CLI = @clienteId",
+                                                    new string[] { "@clienteId" }, new string[] { clienteId }))
+                    {
                         while (facturaReader.Read())
                         {
                             // Crear nodo para cada factura
