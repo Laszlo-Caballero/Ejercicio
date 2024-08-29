@@ -1,3 +1,4 @@
+
 create or alter procedure InsertarPro
 @COD char(5),
 @DESC varchar(50),
@@ -13,3 +14,14 @@ begin
 end
 
 EXEC InsertarPro @COD, @DESC, @PRE, @STK_ACT, @STK_MIN, @MED, @IMP
+
+
+create procedure Datos_Fac
+@numfac varchar(12)
+as
+begin
+select F.NUM_FAC, F.FEC_FAC, C.CONTACTO, C.RUC_CLI, C.RAZ_SOC_CLI, F.PORC_IGV from TB_FACTURA F 
+inner join TB_CLIENTE C on C.COD_CLI = F.COD_CLI
+inner join TB_DETALLE_FACTURA DF on DF.NUM_FAC= F.NUM_FAC
+where F.NUM_FAC = @numfac
+end

@@ -65,7 +65,7 @@ namespace Ejercicio.Ejercicios
             string[] datosParametros = { codDistrito };
 
             // Llama al método consultar para llenar el Data
-            consultas.Consultar(query, dataGridViewVendedores, parametros, datosParametros);
+            consultas.execQueryIntoTabla(query, dataGridViewVendedores, parametros, datosParametros);
 
             // Verificar cuántas filas fueron recuperadas
             MessageBox.Show("Número de vendedores: " + dataGridViewVendedores.Rows.Count);

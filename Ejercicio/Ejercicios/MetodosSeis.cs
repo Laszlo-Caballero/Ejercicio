@@ -15,7 +15,7 @@ namespace Ejercicio.Ejercicios
         private static Consultas consultas = new Consultas();
         public static string CodigoProducto()
         {
-            SqlDataReader reader = consultas.Datos("select top 1 COD_PRO from TB_PRODUCTO order by COD_PRO desc");
+            SqlDataReader reader = consultas.execQuery("select top 1 COD_PRO from TB_PRODUCTO order by COD_PRO desc", [], []);
 
             if (reader.Read())
             {
@@ -77,14 +77,14 @@ namespace Ejercicio.Ejercicios
             
             string[] Datos = {txtCod.Text, nombre, precio.ToString(), stockAct.ToString(), stockMin.ToString(), unidad, importado.ToString()};
             string[] parametros = { "@COD", "@DESC", "@PRE", "@STK_ACT", "@STK_MIN", "@MED", "@IMP" };
-            bool result = consultas.execQuery("EXEC InsertarPro @COD, @DESC, @PRE, @STK_ACT, @STK_MIN, @MED, @IMP", parametros, Datos);
-            MessageBox.Show(result ? "Se Inseto el Producto" : "Error al insertar Producto");
+            SqlDataReader result = consultas.execQuery("EXEC InsertarPro @COD, @DESC, @PRE, @STK_ACT, @STK_MIN, @MED, @IMP", parametros, Datos);
+            MessageBox.Show(result.Read() ? "Se Inseto el Producto" : "Error al insertar Producto");
             return true;
         }
 
         public static void VerDatos(DataGridView tabla)
         {
-            consultas.Consultar("Select * from TB_PRODUCTO", tabla, [], []);
+            consultas.execQueryIntoTabla("Select * from TB_PRODUCTO", tabla, [], []);
         }
     }
 }

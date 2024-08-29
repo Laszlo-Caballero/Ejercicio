@@ -58,7 +58,7 @@ namespace Ejercicio.Ejercicios
             string[] datosParametros = { codProveedor };
 
             // Se llama al método para consultar y llenar el Data
-            consultas.Consultar(query, dgvOrdenCompra, parametros, datosParametros);
+            consultas.execQueryIntoTabla(query, dgvOrdenCompra, parametros, datosParametros);
 
             // Verificar cuántas filas fueron recuperadas
             MessageBox.Show("Número de órdenes de compra: " + dgvOrdenCompra.Rows.Count);
@@ -81,7 +81,7 @@ namespace Ejercicio.Ejercicios
                 string[] datosParametros = { numOco };
 
                 // Llama al método para consultar y llenar el segundo DataGridView
-                consultas.Consultar(query, dgvProductos, parametros, datosParametros);
+                consultas.execQueryIntoTabla(query, dgvProductos, parametros, datosParametros);
 
                 // Verificar cuántas filas fueron recuperadas
                 MessageBox.Show("Número de productos: " + dgvProductos.Rows.Count);
