@@ -1,6 +1,6 @@
 ﻿namespace Ejercicio.Ejercicios
 {
-    partial class EjercicioOcho
+    partial class EjercicioSiete
     {
         /// <summary>
         /// Required designer variable.

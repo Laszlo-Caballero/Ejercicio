@@ -15,7 +15,7 @@ end
 
 EXEC InsertarPro @COD, @DESC, @PRE, @STK_ACT, @STK_MIN, @MED, @IMP
 
-
+go
 create procedure Datos_Fac
 @numfac varchar(12)
 as

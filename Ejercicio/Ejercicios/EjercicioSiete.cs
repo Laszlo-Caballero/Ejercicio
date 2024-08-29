@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Ejercicio.Ejercicios
 {
-    public partial class EjercicioOcho : Form
+    public partial class EjercicioSiete : Form
     {
         private Consultas consultas = new Consultas();
         private bool formLoaded = false;
-        public EjercicioOcho()
+        public EjercicioSiete()
         {
             InitializeComponent();
         }
