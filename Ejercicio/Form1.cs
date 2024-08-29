@@ -34,6 +34,12 @@ namespace Ejercicio
             ejercicioFac.Show();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EjercicioTres ejercicio3 = new EjercicioTres();
+            ejercicio3.Show();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             EjercicioCuatro ejercicioCuatro = new EjercicioCuatro();
