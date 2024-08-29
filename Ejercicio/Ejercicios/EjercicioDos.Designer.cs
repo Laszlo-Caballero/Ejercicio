@@ -28,12 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "EjercicioDos";
+            listBoxClientes = new ListBox();
+            listBoxFacturas = new ListBox();
+            buttonVerDetalles = new Button();
+            textBoxResumenFacturas = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            SuspendLayout();
+            // 
+            // listBoxClientes
+            // 
+            listBoxClientes.FormattingEnabled = true;
+            listBoxClientes.Location = new Point(24, 79);
+            listBoxClientes.Name = "listBoxClientes";
+            listBoxClientes.Size = new Size(226, 264);
+            listBoxClientes.TabIndex = 0;
+            listBoxClientes.SelectedIndexChanged += listBoxClientes_SelectedIndexChanged;
+            // 
+            // listBoxFacturas
+            // 
+            listBoxFacturas.FormattingEnabled = true;
+            listBoxFacturas.Location = new Point(273, 79);
+            listBoxFacturas.Name = "listBoxFacturas";
+            listBoxFacturas.Size = new Size(228, 184);
+            listBoxFacturas.TabIndex = 1;
+            // 
+            // buttonVerDetalles
+            // 
+            buttonVerDetalles.Location = new Point(273, 288);
+            buttonVerDetalles.Name = "buttonVerDetalles";
+            buttonVerDetalles.Size = new Size(228, 32);
+            buttonVerDetalles.TabIndex = 2;
+            buttonVerDetalles.Text = "DETALLE";
+            buttonVerDetalles.UseVisualStyleBackColor = true;
+            buttonVerDetalles.Click += buttonVerDetalles_Click;
+            // 
+            // textBoxResumenFacturas
+            // 
+            textBoxResumenFacturas.Location = new Point(35, 407);
+            textBoxResumenFacturas.Multiline = true;
+            textBoxResumenFacturas.Name = "textBoxResumenFacturas";
+            textBoxResumenFacturas.Size = new Size(456, 197);
+            textBoxResumenFacturas.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(24, 39);
+            label1.Name = "label1";
+            label1.Size = new Size(155, 20);
+            label1.TabIndex = 4;
+            label1.Text = "CODIGO DE CLIENTES";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(276, 39);
+            label2.Name = "label2";
+            label2.Size = new Size(79, 20);
+            label2.TabIndex = 5;
+            label2.Text = "FACTURAS";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(170, 365);
+            label3.Name = "label3";
+            label3.Size = new Size(156, 20);
+            label3.TabIndex = 6;
+            label3.Text = "DETALLE DE FACTURA";
+            // 
+            // EjercicioDos
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(551, 616);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(textBoxResumenFacturas);
+            Controls.Add(buttonVerDetalles);
+            Controls.Add(listBoxFacturas);
+            Controls.Add(listBoxClientes);
+            Name = "EjercicioDos";
+            Text = "EjercicioDos";
+            Load += EjercicioDos_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private ListBox listBoxClientes;
+        private ListBox listBoxFacturas;
+        private Button buttonVerDetalles;
+        private TextBox textBoxResumenFacturas;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
