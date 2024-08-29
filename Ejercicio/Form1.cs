@@ -33,5 +33,11 @@ namespace Ejercicio
             EjercicioFac ejercicioFac = new EjercicioFac();
             ejercicioFac.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            EjercicioTres ejercicio3 = new EjercicioTres();
+            ejercicio3.Show();
+        }
     }
 }
