@@ -37,12 +37,12 @@ namespace Ejercicio.Ejercicios
                 adaptador.Fill(tabla);
                 adaptador.Fill(tabla2);
 
-                // Se configura el ComboBox1
+                // Se configura el combobox de distritos
                 cbDistritos.DataSource = tabla;
                 cbDistritos.DisplayMember = "NOM_DIS";
                 cbDistritos.ValueMember = "COD_DIS";
                 cbDistritos.SelectedIndex = -1;
-                // Se configura el ComboBox2
+                // Se configura el combobo de distritos dos
                 cbDistritosNV.DataSource = tabla2;
                 cbDistritosNV.DisplayMember = "NOM_DIS";
                 cbDistritosNV.ValueMember = "COD_DIS";
