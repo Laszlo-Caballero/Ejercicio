@@ -69,6 +69,47 @@ namespace Ejercicio.Database
                 return null;
             }
         }
-        
+
+        public void execQueryCommandTabla(string query, string[] parametros, string[] datos, DataGridView tabla)
+        {
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                SqlCommand command;
+
+                if (parametros.Length > 0 && datos.Length > 0)
+                {
+                    command = new SqlCommand(query, conexion);
+                    for (int i = 0; i < parametros.Length; i++)
+                    {
+                        command.Parameters.AddWithValue(parametros[i], datos[i]);
+                    }
+                }
+                else
+                {
+                    command = new SqlCommand(query, conexion);
+                }
+
+                adapter.SelectCommand = command;
+
+                DataTable datable = new DataTable();
+                adapter.Fill(datable);
+
+                if (datable.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron resultados.");
+                }
+                else
+                {
+                    tabla.DataSource = datable;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

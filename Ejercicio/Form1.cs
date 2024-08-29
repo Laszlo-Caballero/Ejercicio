@@ -52,10 +52,10 @@ namespace Ejercicio
             ejercicioCinco.Show();
         }
 
-        private void btnSiete_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            EjercicioSiete ejerciciosiete= new EjercicioSiete();
-            ejerciciosiete.Show();
+            EjercicioSiete ejercicioSiete = new EjercicioSiete();   
+            ejercicioSiete.Show();
         }
     }
 }
