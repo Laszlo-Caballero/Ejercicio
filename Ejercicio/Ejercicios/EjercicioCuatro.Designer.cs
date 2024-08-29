@@ -28,132 +28,195 @@
         /// </summary>
         private void InitializeComponent()
         {
-            datosTabla = new DataGridView();
-            groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            rbtAsc = new RadioButton();
-            rbtDesc = new RadioButton();
+            grupoCriterio = new GroupBox();
+            rdBMes = new RadioButton();
+            rdBProducto = new RadioButton();
+            rdBCliente = new RadioButton();
+            txtBuscar = new TextBox();
+            lblBuscar = new Label();
+            GrupoReporte = new GroupBox();
             rbtProducto = new RadioButton();
+            rbtMes = new RadioButton();
             rbtCliente = new RadioButton();
-            rbtIngresos = new RadioButton();
+            datosTabla = new DataGridView();
+            btnMostrar = new Button();
+            btnBusqueda = new Button();
+            grupoCriterio.SuspendLayout();
+            GrupoReporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)datosTabla).BeginInit();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
-            // datosTabla
+            // grupoCriterio
             // 
-            datosTabla.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            datosTabla.Location = new Point(319, 29);
-            datosTabla.Name = "datosTabla";
-            datosTabla.Size = new Size(446, 252);
-            datosTabla.TabIndex = 0;
+            grupoCriterio.Controls.Add(rdBMes);
+            grupoCriterio.Controls.Add(rdBProducto);
+            grupoCriterio.Controls.Add(rdBCliente);
+            grupoCriterio.Location = new Point(12, 223);
+            grupoCriterio.Name = "grupoCriterio";
+            grupoCriterio.Size = new Size(272, 124);
+            grupoCriterio.TabIndex = 8;
+            grupoCriterio.TabStop = false;
+            grupoCriterio.Text = "Criterios";
             // 
-            // groupBox1
+            // rdBMes
             // 
-            groupBox1.Controls.Add(rbtIngresos);
-            groupBox1.Controls.Add(rbtCliente);
-            groupBox1.Controls.Add(rbtProducto);
-            groupBox1.Location = new Point(12, 29);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(272, 145);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Reportes";
+            rdBMes.AutoSize = true;
+            rdBMes.Location = new Point(21, 92);
+            rdBMes.Name = "rdBMes";
+            rdBMes.Size = new Size(94, 19);
+            rdBMes.TabIndex = 10;
+            rdBMes.TabStop = true;
+            rdBMes.Text = "Nombre Mes";
+            rdBMes.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // rdBProducto
             // 
-            groupBox2.Controls.Add(rbtDesc);
-            groupBox2.Controls.Add(rbtAsc);
-            groupBox2.Location = new Point(12, 199);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(272, 82);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Orenamiento";
+            rdBProducto.AutoSize = true;
+            rdBProducto.Location = new Point(20, 31);
+            rdBProducto.Name = "rdBProducto";
+            rdBProducto.Size = new Size(116, 19);
+            rdBProducto.TabIndex = 9;
+            rdBProducto.TabStop = true;
+            rdBProducto.Text = "Codigo Producto";
+            rdBProducto.UseVisualStyleBackColor = true;
             // 
-            // rbtAsc
+            // rdBCliente
             // 
-            rbtAsc.AutoSize = true;
-            rbtAsc.Location = new Point(21, 40);
-            rbtAsc.Name = "rbtAsc";
-            rbtAsc.Size = new Size(87, 19);
-            rbtAsc.TabIndex = 3;
-            rbtAsc.TabStop = true;
-            rbtAsc.Text = "Ascendente";
-            rbtAsc.UseVisualStyleBackColor = true;
+            rdBCliente.AutoSize = true;
+            rdBCliente.Location = new Point(21, 63);
+            rdBCliente.Name = "rdBCliente";
+            rdBCliente.Size = new Size(104, 19);
+            rdBCliente.TabIndex = 8;
+            rdBCliente.TabStop = true;
+            rdBCliente.Text = "Codigo Cliente";
+            rdBCliente.UseVisualStyleBackColor = true;
             // 
-            // rbtDesc
+            // txtBuscar
             // 
-            rbtDesc.AutoSize = true;
-            rbtDesc.Location = new Point(145, 40);
-            rbtDesc.Name = "rbtDesc";
-            rbtDesc.Size = new Size(93, 19);
-            rbtDesc.TabIndex = 4;
-            rbtDesc.TabStop = true;
-            rbtDesc.Text = "Descendente";
-            rbtDesc.UseVisualStyleBackColor = true;
+            txtBuscar.Location = new Point(127, 185);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(157, 23);
+            txtBuscar.TabIndex = 7;
+            // 
+            // lblBuscar
+            // 
+            lblBuscar.AutoSize = true;
+            lblBuscar.Location = new Point(12, 188);
+            lblBuscar.Name = "lblBuscar";
+            lblBuscar.Size = new Size(45, 15);
+            lblBuscar.TabIndex = 6;
+            lblBuscar.Text = "Buscar:";
+            // 
+            // GrupoReporte
+            // 
+            GrupoReporte.Controls.Add(rbtProducto);
+            GrupoReporte.Controls.Add(rbtMes);
+            GrupoReporte.Controls.Add(rbtCliente);
+            GrupoReporte.Location = new Point(12, 29);
+            GrupoReporte.Name = "GrupoReporte";
+            GrupoReporte.Size = new Size(272, 136);
+            GrupoReporte.TabIndex = 5;
+            GrupoReporte.TabStop = false;
+            GrupoReporte.Text = "Reportes";
             // 
             // rbtProducto
             // 
             rbtProducto.AutoSize = true;
-            rbtProducto.Location = new Point(21, 34);
+            rbtProducto.Location = new Point(21, 26);
             rbtProducto.Name = "rbtProducto";
             rbtProducto.Size = new Size(132, 19);
-            rbtProducto.TabIndex = 5;
+            rbtProducto.TabIndex = 8;
             rbtProducto.TabStop = true;
             rbtProducto.Text = "Ventas por Producto";
             rbtProducto.UseVisualStyleBackColor = true;
             // 
+            // rbtMes
+            // 
+            rbtMes.AutoSize = true;
+            rbtMes.Location = new Point(21, 97);
+            rbtMes.Name = "rbtMes";
+            rbtMes.Size = new Size(115, 19);
+            rbtMes.TabIndex = 7;
+            rbtMes.TabStop = true;
+            rbtMes.Text = "Ingresos por Mes";
+            rbtMes.UseVisualStyleBackColor = true;
+            // 
             // rbtCliente
             // 
             rbtCliente.AutoSize = true;
-            rbtCliente.Location = new Point(21, 74);
+            rbtCliente.Location = new Point(21, 61);
             rbtCliente.Name = "rbtCliente";
-            rbtCliente.Size = new Size(120, 19);
+            rbtCliente.Size = new Size(134, 19);
             rbtCliente.TabIndex = 6;
             rbtCliente.TabStop = true;
-            rbtCliente.Text = "Ventas por Cliente";
+            rbtCliente.Text = "Compras por Cliente";
             rbtCliente.UseVisualStyleBackColor = true;
             // 
-            // rbtIngresos
+            // datosTabla
             // 
-            rbtIngresos.AutoSize = true;
-            rbtIngresos.Location = new Point(21, 110);
-            rbtIngresos.Name = "rbtIngresos";
-            rbtIngresos.Size = new Size(115, 19);
-            rbtIngresos.TabIndex = 7;
-            rbtIngresos.TabStop = true;
-            rbtIngresos.Text = "Ingresos por Mes";
-            rbtIngresos.UseVisualStyleBackColor = true;
+            datosTabla.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            datosTabla.Location = new Point(309, 31);
+            datosTabla.Name = "datosTabla";
+            datosTabla.Size = new Size(467, 242);
+            datosTabla.TabIndex = 9;
+            // 
+            // btnMostrar
+            // 
+            btnMostrar.Location = new Point(311, 296);
+            btnMostrar.Name = "btnMostrar";
+            btnMostrar.Size = new Size(93, 38);
+            btnMostrar.TabIndex = 11;
+            btnMostrar.Text = "MOSTRAR";
+            btnMostrar.UseVisualStyleBackColor = true;
+            btnMostrar.Click += btnMostrar_Click;
+            // 
+            // btnBusqueda
+            // 
+            btnBusqueda.Location = new Point(421, 296);
+            btnBusqueda.Name = "btnBusqueda";
+            btnBusqueda.Size = new Size(93, 38);
+            btnBusqueda.TabIndex = 10;
+            btnBusqueda.Text = "BUSQUEDA";
+            btnBusqueda.UseVisualStyleBackColor = true;
+            btnBusqueda.Click += btnBusqueda_Click;
             // 
             // EjercicioCuatro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 319);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(804, 367);
+            Controls.Add(btnMostrar);
+            Controls.Add(btnBusqueda);
             Controls.Add(datosTabla);
+            Controls.Add(grupoCriterio);
+            Controls.Add(txtBuscar);
+            Controls.Add(lblBuscar);
+            Controls.Add(GrupoReporte);
             Name = "EjercicioCuatro";
             Text = "EjercicioCuatro";
+            grupoCriterio.ResumeLayout(false);
+            grupoCriterio.PerformLayout();
+            GrupoReporte.ResumeLayout(false);
+            GrupoReporte.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)datosTabla).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private DataGridView datosTabla;
-        private GroupBox groupBox1;
-        private RadioButton rbtIngresos;
-        private RadioButton rbtCliente;
+        private GroupBox grupoCriterio;
+        private RadioButton rdBMes;
+        private RadioButton rdBProducto;
+        private RadioButton rdBCliente;
+        private TextBox txtBuscar;
+        private Label lblBuscar;
+        private GroupBox GrupoReporte;
         private RadioButton rbtProducto;
-        private GroupBox groupBox2;
-        private RadioButton rbtDesc;
-        private RadioButton rbtAsc;
+        private RadioButton rbtMes;
+        private RadioButton rbtCliente;
+        private DataGridView datosTabla;
+        private Button btnMostrar;
+        private Button btnBusqueda;
     }
 }
