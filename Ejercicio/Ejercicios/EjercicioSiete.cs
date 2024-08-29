@@ -35,12 +35,11 @@ namespace Ejercicio.Ejercicios
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                 adaptador.Fill(tabla);
 
-                // Se configura el ComboBox1
+                // Se configura el Combobox
                 cbProveedores.DataSource = tabla;
                 cbProveedores.DisplayMember = "RAZ_SOC_PRV";
                 cbProveedores.ValueMember = "COD_PRV";
                 cbProveedores.SelectedIndex = -1;
-                // Cerrar la conexión después de usarla
                 conexion.Close();
             }
             formLoaded = true;
@@ -60,19 +59,19 @@ namespace Ejercicio.Ejercicios
             // Se llama al método para consultar y llenar el Data
             consultas.execQueryIntoTabla(query, dgvOrdenCompra, parametros, datosParametros);
 
-            // Verificar cuántas filas fueron recuperadas
+            // Se muestra el mensaje
             MessageBox.Show("Número de órdenes de compra: " + dgvOrdenCompra.Rows.Count);
         }
 
         private void dgvOrdenCompra_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verifica que el clic no sea en el encabezado
+            // Se verifica que el clic no sea en el encabezado
             if (e.RowIndex >= 0)
             {
-                // Obtiene el número de la orden de compra seleccionada
+                // Obtiene el número de la orden de compra q se selecciona
                 string numOco = dgvOrdenCompra.Rows[e.RowIndex].Cells["NUM_OCO"].Value.ToString();
 
-                // Configura la consulta para obtener los detalles de los productos asociados a la orden de compra
+                // Se hace la consulta para obtener los detalles de los productos asociados a la orden de compra
                 string query = "SELECT P.COD_PRO, P.DES_PRO, D.CAN_PED, P.PRE_PRO " +
                                "FROM dbo.TB_DETALLE_COMPRA D " +
                                "INNER JOIN dbo.TB_PRODUCTO P ON D.COD_PRO = P.COD_PRO " +
@@ -80,10 +79,10 @@ namespace Ejercicio.Ejercicios
                 string[] parametros = { "@NUM_OCO" };
                 string[] datosParametros = { numOco };
 
-                // Llama al método para consultar y llenar el segundo DataGridView
+                // Se llama al método para consultar y llenar el segundo Data
                 consultas.execQueryIntoTabla(query, dgvProductos, parametros, datosParametros);
 
-                // Verificar cuántas filas fueron recuperadas
+                // Se verifica cuántas filas fueron recuperadas y se muestra el mensaje
                 MessageBox.Show("Número de productos: " + dgvProductos.Rows.Count);
             }
         }

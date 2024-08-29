@@ -47,7 +47,6 @@ namespace Ejercicio.Ejercicios
                 cbDistritosNV.DisplayMember = "NOM_DIS";
                 cbDistritosNV.ValueMember = "COD_DIS";
 
-                // Cerrar la conexión después de usarla
                 conexion.Close();
             }
             formLoaded = true;
@@ -67,7 +66,7 @@ namespace Ejercicio.Ejercicios
             // Llama al método consultar para llenar el Data
             consultas.execQueryIntoTabla(query, dataGridViewVendedores, parametros, datosParametros);
 
-            // Verificar cuántas filas fueron recuperadas
+            // Se verifica cuantas filas se recuperaron y se muestra el mensaje
             MessageBox.Show("Número de vendedores: " + dataGridViewVendedores.Rows.Count);
         }
 
@@ -109,8 +108,7 @@ namespace Ejercicio.Ejercicios
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            // Verificar si todos los campos están completos
-
+            // Se verifica si todos los campos están completos
             if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) || string.IsNullOrWhiteSpace(txtSueldo.Text) || cbTV.SelectedIndex == -1 || cbDistritosNV.SelectedIndex == -1)
             {
                 MessageBox.Show("Es necesario que complete todos los campos.");
@@ -133,7 +131,6 @@ namespace Ejercicio.Ejercicios
                 string query = "INSERT INTO dbo.TB_VENDEDOR (COD_VEN, NOM_VEN, APE_VEN, SUELDO_VEN, FEC_ING, TIP_VEN, COD_DIS) " +
                                "VALUES (@COD_VEN, @NOM_VEN, @APE_VEN, @SUELDO_VEN, @FEC_ING, @TIP_VEN, @COD_DIS)";
 
-                // Creación del comando SQL
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@COD_VEN", codigoVendedor); // Código generado automáticamente
                 cmd.Parameters.AddWithValue("@NOM_VEN", txtNombre.Text);
@@ -143,7 +140,6 @@ namespace Ejercicio.Ejercicios
                 cmd.Parameters.AddWithValue("@TIP_VEN", tipoVen);
                 cmd.Parameters.AddWithValue("@COD_DIS", codigoDistrito); // Código del distrito seleccionado
 
-                // Ejecutar la consulta
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Datos ingresados correctamente.");
@@ -161,16 +157,16 @@ namespace Ejercicio.Ejercicios
         {
             // Acá se obtiene el último código insertado
             string query = "SELECT TOP 1 COD_VEN FROM dbo.TB_VENDEDOR ORDER BY COD_VEN DESC";
-            SqlCommand cmd = new SqlCommand(query, conexion);
+            SqlCommand comando = new SqlCommand(query, conexion);
 
-            object result = cmd.ExecuteScalar();
+            object resultado = comando.ExecuteScalar();
 
             // Se genera el nuevo código
-            if (result != null)
+            if (resultado != null)
             {
-                string ultimoCodigo = result.ToString();
+                string ultimoCodigo = resultado.ToString();
                 int numero = int.Parse(ultimoCodigo.Substring(1)) + 1;
-                return "V" + numero.ToString("D2"); // Formato como V01, V02, etc.
+                return "V" + numero.ToString("D2"); // Formato como: V01, V02, etc.
             }
             else
             {
