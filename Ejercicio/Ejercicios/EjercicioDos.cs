@@ -127,17 +127,16 @@ namespace Ejercicio.Ejercicios
         {
             try
             {
-                // Crea la instancia de la clase Consultas
+               
                 Consultas consultas = new Consultas();
 
-                // Crea la consulta
+           
                 string query = "SELECT D.COD_PRO, D.CAN_VEN, D.PRE_VEN FROM TB_DETALLE_FACTURA D WHERE D.NUM_FAC = @NUM_FAC";
 
-                // Parámetros para la consulta
                 string[] parametros = { "@NUM_FAC" };
                 string[] datos = { factura };
 
-                // Ejecuta la consulta
+            
                 SqlDataReader reader = consultas.execQuery(query, parametros, datos);
 
                 if (reader != null && reader.HasRows)
@@ -154,7 +153,7 @@ namespace Ejercicio.Ejercicios
                     MessageBox.Show("No se encontraron detalles para la factura seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                // Asegúrate de cerrar el reader después de usarlo
+            
                 if (reader != null) reader.Close();
             }
             catch (Exception ex)
