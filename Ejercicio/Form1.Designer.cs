@@ -34,16 +34,16 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
-            button1 = new Button();
+            btn7 = new Button();
             btnEjercicio8 = new Button();
             SuspendLayout();
             // 
             // btn1
             // 
-            btn1.Location = new Point(116, 50);
-            btn1.Margin = new Padding(3, 2, 3, 2);
+            btn1.Location = new Point(215, 107);
+            btn1.Margin = new Padding(6, 4, 6, 4);
             btn1.Name = "btn1";
-            btn1.Size = new Size(82, 22);
+            btn1.Size = new Size(152, 47);
             btn1.TabIndex = 0;
             btn1.Text = "Ejercicio 1";
             btn1.UseVisualStyleBackColor = true;
@@ -51,10 +51,10 @@
             // 
             // button2
             // 
-            button2.Location = new Point(273, 50);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(507, 107);
+            button2.Margin = new Padding(6, 4, 6, 4);
             button2.Name = "button2";
-            button2.Size = new Size(82, 22);
+            button2.Size = new Size(152, 47);
             button2.TabIndex = 1;
             button2.Text = "Ejercicio 2";
             button2.UseVisualStyleBackColor = true;
@@ -62,10 +62,10 @@
             // 
             // button3
             // 
-            button3.Location = new Point(426, 50);
-            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Location = new Point(791, 107);
+            button3.Margin = new Padding(6, 4, 6, 4);
             button3.Name = "button3";
-            button3.Size = new Size(82, 22);
+            button3.Size = new Size(152, 47);
             button3.TabIndex = 2;
             button3.Text = "Ejercicio 3";
             button3.UseVisualStyleBackColor = true;
@@ -73,10 +73,10 @@
             // 
             // button4
             // 
-            button4.Location = new Point(116, 118);
-            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Location = new Point(215, 252);
+            button4.Margin = new Padding(6, 4, 6, 4);
             button4.Name = "button4";
-            button4.Size = new Size(82, 22);
+            button4.Size = new Size(152, 47);
             button4.TabIndex = 3;
             button4.Text = "Ejercicio 4";
             button4.UseVisualStyleBackColor = true;
@@ -84,41 +84,42 @@
             // 
             // button5
             // 
-            button5.Location = new Point(273, 118);
-            button5.Margin = new Padding(3, 2, 3, 2);
+            button5.Location = new Point(507, 252);
+            button5.Margin = new Padding(6, 4, 6, 4);
             button5.Name = "button5";
-            button5.Size = new Size(82, 22);
+            button5.Size = new Size(152, 47);
             button5.TabIndex = 4;
             button5.Text = "Ejercicio 5";
             button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            button6.Location = new Point(426, 118);
-            button6.Margin = new Padding(3, 2, 3, 2);
+            button6.Location = new Point(791, 252);
+            button6.Margin = new Padding(6, 4, 6, 4);
             button6.Name = "button6";
-            button6.Size = new Size(82, 22);
+            button6.Size = new Size(152, 47);
             button6.TabIndex = 5;
             button6.Text = "Ejercicio 6";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
-            // button1
+            // btn7
             // 
-            button1.Location = new Point(204, 166);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(82, 22);
-            button1.TabIndex = 6;
-            button1.Text = "Ejercicio 7";
-            button1.UseVisualStyleBackColor = true;
+            btn7.Location = new Point(379, 354);
+            btn7.Margin = new Padding(6, 4, 6, 4);
+            btn7.Name = "btn7";
+            btn7.Size = new Size(152, 47);
+            btn7.TabIndex = 6;
+            btn7.Text = "Ejercicio 7";
+            btn7.UseVisualStyleBackColor = true;
+            btn7.Click += btn7_Click;
             // 
             // btnEjercicio8
             // 
-            btnEjercicio8.Location = new Point(349, 166);
-            btnEjercicio8.Margin = new Padding(3, 2, 3, 2);
+            btnEjercicio8.Location = new Point(648, 354);
+            btnEjercicio8.Margin = new Padding(6, 4, 6, 4);
             btnEjercicio8.Name = "btnEjercicio8";
-            btnEjercicio8.Size = new Size(82, 22);
+            btnEjercicio8.Size = new Size(152, 47);
             btnEjercicio8.TabIndex = 7;
             btnEjercicio8.Text = "Ejercicio 8";
             btnEjercicio8.UseVisualStyleBackColor = true;
@@ -126,18 +127,18 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(629, 256);
+            ClientSize = new Size(1168, 546);
             Controls.Add(btnEjercicio8);
-            Controls.Add(button1);
+            Controls.Add(btn7);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(btn1);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(6, 4, 6, 4);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -151,7 +152,7 @@
         private Button button4;
         private Button button5;
         private Button button6;
-        private Button button1;
+        private Button btn7;
         private Button btnEjercicio8;
     }
 }
