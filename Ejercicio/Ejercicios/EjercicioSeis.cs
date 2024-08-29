@@ -30,5 +30,10 @@ namespace Ejercicio.Ejercicios
                 txtCod.Text = MetodosSeis.CodigoProducto();
             }
         }
+
+        private void EjercicioSeis_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

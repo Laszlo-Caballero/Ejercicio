@@ -234,6 +234,7 @@
             Controls.Add(label1);
             Name = "EjercicioSeis";
             Text = "EjercicioSeis";
+            Load += EjercicioSeis_Load;
             ((System.ComponentModel.ISupportInitialize)tabla).EndInit();
             ResumeLayout(false);
             PerformLayout();
