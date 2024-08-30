@@ -86,5 +86,60 @@ namespace Ejercicio.Ejercicios
                 MessageBox.Show("Número de productos: " + dgvProductos.Rows.Count);
             }
         }
+
+        private void btnVerEstado_Click(object sender, EventArgs e)
+        {
+            string numeroOrden = txtOrdenCompra.Text.Trim();
+
+            if (string.IsNullOrEmpty(numeroOrden))
+            {
+                MessageBox.Show("Por favor, ingrese el número de orden de compra.");
+                return;
+            }
+
+            try
+            {
+                string query = "SELECT EST_OCO FROM dbo.TB_ORDEN_COMPRA WHERE NUM_OCO = @NUM_OCO";
+                string[] parametros = { "@NUM_OCO" };
+                string[] datosParametros = { numeroOrden };
+
+                SqlDataReader reader = consultas.execQuery(query, parametros, datosParametros);
+
+                if (reader != null && reader.Read())
+                {
+                    string estado = reader["EST_OCO"].ToString();
+                    string mensaje;
+
+                    if (estado == "1")
+                    {
+                        mensaje = "La orden de compra está *pendiente*.";
+                    }
+                    else if (estado == "2")
+                    {
+                        mensaje = "La orden de compra está *procesada*.";
+                    }
+                    else if (estado == "3")
+                    {
+                        mensaje = "La orden de compra está *completada*.";
+                    }
+                    else
+                    {
+                        mensaje = "No se conoce su estado.";
+                    }
+
+                    MessageBox.Show(mensaje);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la orden de compra.");
+                }
+
+                reader?.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+        }
     }
 }
