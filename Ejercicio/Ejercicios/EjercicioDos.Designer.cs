@@ -39,71 +39,87 @@
             // 
             // listBoxClientes
             // 
+            listBoxClientes.Font = new Font("DejaVu Sans", 9F);
             listBoxClientes.FormattingEnabled = true;
-            listBoxClientes.Location = new Point(24, 79);
+            listBoxClientes.ItemHeight = 28;
+            listBoxClientes.Location = new Point(39, 126);
+            listBoxClientes.Margin = new Padding(5, 5, 5, 5);
             listBoxClientes.Name = "listBoxClientes";
-            listBoxClientes.Size = new Size(226, 264);
+            listBoxClientes.Size = new Size(365, 396);
             listBoxClientes.TabIndex = 0;
             listBoxClientes.SelectedIndexChanged += listBoxClientes_SelectedIndexChanged;
             // 
             // listBoxFacturas
             // 
+            listBoxFacturas.Font = new Font("DejaVu Sans", 9F);
             listBoxFacturas.FormattingEnabled = true;
-            listBoxFacturas.Location = new Point(273, 79);
+            listBoxFacturas.ItemHeight = 28;
+            listBoxFacturas.Location = new Point(444, 126);
+            listBoxFacturas.Margin = new Padding(5, 5, 5, 5);
             listBoxFacturas.Name = "listBoxFacturas";
-            listBoxFacturas.Size = new Size(228, 184);
+            listBoxFacturas.Size = new Size(368, 284);
             listBoxFacturas.TabIndex = 1;
             // 
             // buttonVerDetalles
             // 
-            buttonVerDetalles.Location = new Point(273, 288);
+            buttonVerDetalles.Font = new Font("DejaVu Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonVerDetalles.Location = new Point(444, 461);
+            buttonVerDetalles.Margin = new Padding(5, 5, 5, 5);
             buttonVerDetalles.Name = "buttonVerDetalles";
-            buttonVerDetalles.Size = new Size(228, 32);
+            buttonVerDetalles.Size = new Size(370, 51);
             buttonVerDetalles.TabIndex = 2;
-            buttonVerDetalles.Text = "DETALLE";
+            buttonVerDetalles.Text = "VER DETALLE";
             buttonVerDetalles.UseVisualStyleBackColor = true;
             buttonVerDetalles.Click += buttonVerDetalles_Click;
             // 
             // textBoxResumenFacturas
             // 
-            textBoxResumenFacturas.Location = new Point(35, 407);
+            textBoxResumenFacturas.Font = new Font("DejaVu Sans", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxResumenFacturas.Location = new Point(57, 651);
+            textBoxResumenFacturas.Margin = new Padding(5, 5, 5, 5);
             textBoxResumenFacturas.Multiline = true;
             textBoxResumenFacturas.Name = "textBoxResumenFacturas";
-            textBoxResumenFacturas.Size = new Size(456, 197);
+            textBoxResumenFacturas.Size = new Size(738, 313);
             textBoxResumenFacturas.TabIndex = 3;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(24, 39);
+            label1.Font = new Font("DejaVu Sans", 9F, FontStyle.Bold);
+            label1.Location = new Point(39, 62);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(155, 20);
+            label1.Size = new Size(293, 28);
             label1.TabIndex = 4;
             label1.Text = "CODIGO DE CLIENTES";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(276, 39);
+            label2.Font = new Font("DejaVu Sans", 9F, FontStyle.Bold);
+            label2.Location = new Point(448, 62);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(79, 20);
+            label2.Size = new Size(145, 28);
             label2.TabIndex = 5;
             label2.Text = "FACTURAS";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(170, 365);
+            label3.Font = new Font("DejaVu Sans", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(276, 584);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(156, 20);
+            label3.Size = new Size(292, 28);
             label3.TabIndex = 6;
             label3.Text = "DETALLE DE FACTURA";
             // 
             // EjercicioDos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(551, 616);
+            ClientSize = new Size(895, 986);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -111,6 +127,7 @@
             Controls.Add(buttonVerDetalles);
             Controls.Add(listBoxFacturas);
             Controls.Add(listBoxClientes);
+            Margin = new Padding(5, 5, 5, 5);
             Name = "EjercicioDos";
             Text = "EjercicioDos";
             Load += EjercicioDos_Load;
